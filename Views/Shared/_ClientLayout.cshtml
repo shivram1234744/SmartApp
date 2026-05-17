@@ -1,0 +1,234 @@
+﻿
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TrustPlus</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/ClientStyleSheet.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TrustPlus.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="ztop d-flex align-items-center gap-2">
+        <div class="ztop-brand d-flex align-items-center gap-2">
+        </div>
+        <div class="ztop-sep"></div>
+        <div class="ztop-links">
+            <a class="ztop-lnk act" href="admin-dashboard.html">Client</a><a class="ztop-lnk"
+                                                                            href="faculty-dashboard.html">Faculty</a><a class="ztop-lnk" href="student-dashboard.html">Student</a><a class="ztop-lnk" href="index.html">Home</a>
+        </div>
+
+
+
+        <div class="ms-auto"><span class="ztop-badge tb-adm">⚙ Client Zone</span></div>
+    </div>
+    <div class="ex-sidebar-overlay" id="ex-sidebar-overlay"></div>
+    <div class="shell">
+        <div class="row g-0 h-100">
+            <div class="col-auto">
+                <aside class="sidebar d-flex flex-column" id="ex-sidebar">
+                    <div class="sb-head">
+                       
+                        <div class="sb-pill sp-adm">⚙ Client Zone</div>
+                        <div class="sb-user d-flex align-items-center gap-2">
+                            <div class="sb-av av-adm d-flex align-items-center justify-content-center">C</div>
+                            <div>
+                                <div class="sb-uname">Client</div>
+                                <div class="sb-urole">client@examcontrol.edu</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sb-sec">Overview</div><a asp-action="dashboard" class="ni d-flex align-items-center gap-2 active"
+                                                     style="text-decoration:none">
+                    <svg class="niv" fill="none" stroke="currentColor"
+                         stroke-width="2" viewbox="0 0 24 24">
+                        <rect height="7" width="7" x="3" y="3"></rect>
+                        <rect height="7" width="7" x="14" y="3"></rect>
+                        <rect height="7" width="7" x="14" y="14"></rect>
+                        <rect height="7" width="7" x="3" y="14"></rect>
+                    </svg><span class="nav-lbl">Dashboard</span>
+                </a>
+                <div class="sb-sec">Management</div><a class="ni d-flex align-items-center gap-2" asp-action="NewRequest"
+                                                   style="text-decoration:none">
+                <svg class="niv" fill="none" stroke="currentColor" stroke-width="2"
+                     viewbox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                </svg><span class="nav-lbl">New Request</span>
+
+                 
+                @* <span class="nbg nb-c"
+                                                                        style="background:var(--cy4);color:var(--s900)">48</span> *@
+            </a>
+
+            @* <a class="ni d-flex align-items-center gap-2 active" href="faculty-management.html"
+                   style="text-decoration:none">
+                <svg class="niv" fill="none" stroke="currentColor" stroke-width="2"
+                     viewbox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                </svg><span class="nav-lbl">Faculty Management</span><span class="nbg nb-c"
+                                                                           style="background:var(--cy4);color:var(--s900)">14</span>
+            </a> *@
+
+            @* <a class="ni d-flex align-items-center gap-2"
+                   href="admin-exams.html" style="text-decoration:none">
+                <svg class="niv" fill="none" stroke="currentColor"
+                     stroke-width="2" viewbox="0 0 24 24">
+                    <path d="M9 11l3 3L22 4"></path>
+                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                </svg><span class="nav-lbl">Exam Scheduling</span><span class="nbg nb-a">2 live</span>
+            </a>
+             *@
+            <a class="ni d-flex align-items-center gap-2"
+                   asp-action="MyCases" style="text-decoration:none">
+                <svg class="niv" fill="none" stroke="currentColor"
+                     stroke-width="2" viewbox="0 0 24 24">
+                    <rect height="14" rx="2" width="20" x="2" y="3"></rect>
+                    <line x1="8" x2="16" y1="21" y2="21"></line>
+                    <line x1="12" x2="12" y1="17" y2="21"></line>
+                </svg><span class="nav-lbl">My Cases</span>
+            </a>
+            <div class="sb-sec">Account</div>
+            @*  <a class="ni d-flex align-items-center gap-2" href="admin-proctor.html"
+                                        style="text-decoration:none">
+        <svg class="niv" fill="none" stroke="currentColor" stroke-width="2"
+             viewbox="0 0 24 24">
+            <path d="M23 7l-7 5 7 5V7z"></path>
+            <rect height="14" rx="2" width="15" x="1" y="5"></rect>
+        </svg><span class="nav-lbl">AI Proctor Logs</span><span class="nbg nb-r">3</span>
+    </a> *@
+  
+            @* <a class="sb-foot mt-aut" asp-action="Logout"
+           style="text-decoration:none">
+        <svg class="niv" fill="none" stroke="currentColor" stroke-width="2"
+             viewbox="0 0 24 24">
+            <path d="M23 7l-7 5 7 5V7z"></path>
+            <rect height="14" rx="2" width="15" x="1" y="5"></rect>
+        </svg><span class="nav-lbl">AI Proctor Logs</span><span class="nbg nb-r">3</span>
+    </a> *@
+
+            <a asp-action="Logout">
+                <div class="sb-foot mt-auto">
+                    <div class="sb-out d-flex align-items-center gap-2">
+                        <svg fill="none" height="15" stroke="currentColor"
+                             stroke-width="2" viewbox="0 0 24 24" width="15">
+                            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                        </svg>Sign Out
+                    </div>
+                </div>
+            </a>
+  
+        </aside>
+    </div>
+    <div class="col main d-flex flex-column">
+        <header class="hdr d-flex align-items-center gap-3">
+            <button aria-label="Toggle sidebar" class="ex-mob-toggle"
+                    id="ex-mob-toggle">
+                <svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24"
+                     width="18">
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <div>
+                <div class="hdr-title">Dashboard</div>
+                <div class="hdr-sub">TrustPlus</div>
+            </div>
+            @* <div class="hdr-srch flex-grow-1 ms-2">
+                <div class="hs d-flex align-items-center gap-2">
+                    <svg fill="none" height="14" stroke="var(--g300)"
+                         stroke-width="2" viewbox="0 0 24 24" width="14">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg><input placeholder="Search students, exams…" />
+                </div>
+            </div> *@
+            <div class="ms-auto d-flex align-items-center gap-2">
+                <div style="position:relative">
+                    <button class="hdr-btn d-inline-flex align-items-center justify-content-center"
+                            onclick="toggleNotif('a-nd')">
+                        <svg fill="none" height="16" stroke="currentColor" stroke-width="2"
+                             viewbox="0 0 24 24" width="16">
+                            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 01-3.46 0"></path>
+                        </svg>
+                        <div class="npip"></div>
+                    </button>
+                    <div class="ndrop" id="a-nd">
+                        <div class="nd-hd d-flex justify-content-between align-items-center">
+                            <span class="nd-t">Notifications</span><span class="nd-clr">Clear all</span>
+                        </div>
+                        <div class="nd-item d-flex gap-2 align-items-start">
+                            <div class="nd-av d-inline-flex align-items-center justify-content-center"
+                                 style="background:var(--rbg)">
+                                <svg fill="none" height="13" stroke="var(--red)" stroke-width="2"
+                                     viewbox="0 0 24 24" width="13">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="nd-txt">3 proctoring violations flagged — CS301 Exam</div>
+                                <div class="nd-time">12 min ago</div>
+                            </div>
+                        </div>
+                        <div class="nd-item d-flex gap-2 align-items-start">
+                            <div class="nd-av d-inline-flex align-items-center justify-content-center"
+                                 style="background:var(--gbg)">
+                                <svg fill="none" height="13" stroke="var(--green)" stroke-width="2"
+                                     viewbox="0 0 24 24" width="13">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="nd-txt">Trust Plus</div>
+                                <div class="nd-time">1 hr ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @* <div class="hdiv"></div>
+                <a asp-action="Logout" class="text-dark" style="font:black;">
+                    <div class="sb-foot mt-auto">
+                        <div class="sb-out d-flex align-items-center gap-2">
+                            <svg fill="none" height="15" stroke="currentColor"
+                                 stroke-width="2" viewbox="0 0 24 24" width="15">
+                                <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                            </svg>Sign Out
+                        </div>
+                    </div>
+                </a> *@
+            </div>
+        </header>
+        @RenderBody()
+    </div>
+</div>
+</div>
+
+<script src="~/js/Client.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    /* ── MOBILE SIDEBAR TOGGLE ── */
+    (function () {
+    var toggle = document.getElementById('ex-mob-toggle');
+    var sidebar = document.getElementById('ex-sidebar');
+    var overlay = document.getElementById('ex-sidebar-overlay');
+    if (!toggle || !sidebar) return;
+    function open() { sidebar.classList.add('ex-sidebar-open'); if (overlay) overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
+    function close() { sidebar.classList.remove('ex-sidebar-open'); if (overlay) overlay.classList.remove('show'); document.body.style.overflow = ''; }
+    toggle.addEventListener('click', function (e) { e.stopPropagation(); sidebar.classList.contains('ex-sidebar-open') ? close() : open(); });
+    if (overlay) overlay.addEventListener('click', close);
+    sidebar.querySelectorAll('.ni').forEach(function (n) { n.addEventListener('click', function () { if (window.innerWidth < 992) close(); }); });
+    })();
+</script>
+@RenderSection("Scripts", required: false)
+</body>
+
+</html>

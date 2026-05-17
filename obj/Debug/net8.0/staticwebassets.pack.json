@@ -1,0 +1,409 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\TrustPlus.bundle.scp.css",
+      "PackagePath": "staticwebassets\\TrustPlus.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\css\\AdminStyleSheet.css",
+      "PackagePath": "staticwebassets\\css\\AdminStyleSheet.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\css\\ClientStyleSheet.css",
+      "PackagePath": "staticwebassets\\css\\ClientStyleSheet.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\js\\Admin.js",
+      "PackagePath": "staticwebassets\\js\\Admin.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\js\\Client.js",
+      "PackagePath": "staticwebassets\\js\\Client.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\076151d5-7b69-4a86-adb4-aa0ad23b8771_hero.png",
+      "PackagePath": "staticwebassets\\uploads\\076151d5-7b69-4a86-adb4-aa0ad23b8771_hero.png"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\10d40e2c-c771-472e-9fa2-29265a9bcc82_hero.png",
+      "PackagePath": "staticwebassets\\uploads\\10d40e2c-c771-472e-9fa2-29265a9bcc82_hero.png"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\1570fa64-585b-4b13-96fb-c16cb29d7032_hero-removebg-preview.png",
+      "PackagePath": "staticwebassets\\uploads\\1570fa64-585b-4b13-96fb-c16cb29d7032_hero-removebg-preview.png"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\25077d85-ad39-4f83-b4b5-296e4b6d97fc.pdf",
+      "PackagePath": "staticwebassets\\uploads\\25077d85-ad39-4f83-b4b5-296e4b6d97fc.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\27fa4f39-3f05-4c45-9c0a-7937a6d527f5_f78d7a79-2d2f-4c55-ae3f-155c15479482.pdf",
+      "PackagePath": "staticwebassets\\uploads\\27fa4f39-3f05-4c45-9c0a-7937a6d527f5_f78d7a79-2d2f-4c55-ae3f-155c15479482.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\297d68d8-1c0c-4f3b-b09e-882e8fb57a2d.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\297d68d8-1c0c-4f3b-b09e-882e8fb57a2d.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\39c000ca-cb17-40ef-8682-24e5ecd0c4c8.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\39c000ca-cb17-40ef-8682-24e5ecd0c4c8.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\46b0e90b-17c6-4936-aedf-bf12dd009d4e_f78d7a79-2d2f-4c55-ae3f-155c15479482.pdf",
+      "PackagePath": "staticwebassets\\uploads\\46b0e90b-17c6-4936-aedf-bf12dd009d4e_f78d7a79-2d2f-4c55-ae3f-155c15479482.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\482f666e-c7fa-4c30-a079-b5699f788782.apk",
+      "PackagePath": "staticwebassets\\uploads\\482f666e-c7fa-4c30-a079-b5699f788782.apk"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\53d5dc87-77f3-4647-9fd7-6b06e6220f67.png",
+      "PackagePath": "staticwebassets\\uploads\\53d5dc87-77f3-4647-9fd7-6b06e6220f67.png"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\5cbe976a-0a13-4a1b-b75b-7eecf64ba0e7_Leave Policy.pdf",
+      "PackagePath": "staticwebassets\\uploads\\5cbe976a-0a13-4a1b-b75b-7eecf64ba0e7_Leave Policy.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\5e5788ef-2544-4279-b083-72ff06854e94.png",
+      "PackagePath": "staticwebassets\\uploads\\5e5788ef-2544-4279-b083-72ff06854e94.png"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\61265d59-0c57-4a4b-94ec-e62acf29ebae.pdf",
+      "PackagePath": "staticwebassets\\uploads\\61265d59-0c57-4a4b-94ec-e62acf29ebae.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\6a729984-a3fe-4a7f-8cd6-6e3625cb4f53.pdf",
+      "PackagePath": "staticwebassets\\uploads\\6a729984-a3fe-4a7f-8cd6-6e3625cb4f53.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\6e73c44f-0e01-41c1-940e-1e1ce65e314b.pdf",
+      "PackagePath": "staticwebassets\\uploads\\6e73c44f-0e01-41c1-940e-1e1ce65e314b.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\6ea68f37-e3dd-42ae-a27a-3f26faa67825.pdf",
+      "PackagePath": "staticwebassets\\uploads\\6ea68f37-e3dd-42ae-a27a-3f26faa67825.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\70a2a755-6028-4f68-a994-de73b49c4ffd.png",
+      "PackagePath": "staticwebassets\\uploads\\70a2a755-6028-4f68-a994-de73b49c4ffd.png"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\72933702-4186-4006-9353-298174ed153e_EXP-20260427-D7F0.pdf",
+      "PackagePath": "staticwebassets\\uploads\\72933702-4186-4006-9353-298174ed153e_EXP-20260427-D7F0.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\796ececc-79b3-45e8-a3bf-212e32994ca2_Leave Policy.pdf",
+      "PackagePath": "staticwebassets\\uploads\\796ececc-79b3-45e8-a3bf-212e32994ca2_Leave Policy.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\85bfe46d-a86e-4400-b5ef-4f0df09a9c52_Aman_Sahu___Resume.pdf",
+      "PackagePath": "staticwebassets\\uploads\\85bfe46d-a86e-4400-b5ef-4f0df09a9c52_Aman_Sahu___Resume.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\8e11c736-d277-4f72-a232-c10695e65d80_Aman_Sahu___Resume.pdf",
+      "PackagePath": "staticwebassets\\uploads\\8e11c736-d277-4f72-a232-c10695e65d80_Aman_Sahu___Resume.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\9abe8ae9-5aff-41b0-8d1c-ba14a71250ab_Aman_Sahu___Resume.pdf",
+      "PackagePath": "staticwebassets\\uploads\\9abe8ae9-5aff-41b0-8d1c-ba14a71250ab_Aman_Sahu___Resume.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\b9283ce5-a4aa-4062-8276-2967eece241d_Aman_Sahu___Resume.pdf",
+      "PackagePath": "staticwebassets\\uploads\\b9283ce5-a4aa-4062-8276-2967eece241d_Aman_Sahu___Resume.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\c7c8ddf7-c73b-4cd2-9232-9d3809c87eea.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\c7c8ddf7-c73b-4cd2-9232-9d3809c87eea.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\ce938eea-1a12-4e4d-84c1-b6844ceb1a77_Leave Policy.pdf",
+      "PackagePath": "staticwebassets\\uploads\\ce938eea-1a12-4e4d-84c1-b6844ceb1a77_Leave Policy.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\d905d9cd-4e07-476e-8d8f-f40458040aae_Ankit_Sahu___Resume.pdf",
+      "PackagePath": "staticwebassets\\uploads\\d905d9cd-4e07-476e-8d8f-f40458040aae_Ankit_Sahu___Resume.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\d9597397-3418-489f-b271-036f88725f24_c7c8ddf7-c73b-4cd2-9232-9d3809c87eea (1).jpeg",
+      "PackagePath": "staticwebassets\\uploads\\d9597397-3418-489f-b271-036f88725f24_c7c8ddf7-c73b-4cd2-9232-9d3809c87eea (1).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\e0ae5577-953e-4895-8750-4a8f47011e9a_contact.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\e0ae5577-953e-4895-8750-4a8f47011e9a_contact.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\e35e9957-81bb-40ed-aedf-ebe0049c08df.pdf",
+      "PackagePath": "staticwebassets\\uploads\\e35e9957-81bb-40ed-aedf-ebe0049c08df.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\e5c0a16a-7dbf-4035-82fb-06c0547eb1b4.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\e5c0a16a-7dbf-4035-82fb-06c0547eb1b4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\f1950a1a-e6e2-4ca0-8898-b0cbeb55ba10.pdf",
+      "PackagePath": "staticwebassets\\uploads\\f1950a1a-e6e2-4ca0-8898-b0cbeb55ba10.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\wwwroot\\uploads\\f78d7a79-2d2f-4c55-ae3f-155c15479482.pdf",
+      "PackagePath": "staticwebassets\\uploads\\f78d7a79-2d2f-4c55-ae3f-155c15479482.pdf"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.TrustPlus.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.TrustPlus.props",
+      "PackagePath": "build\\TrustPlus.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.TrustPlus.props",
+      "PackagePath": "buildMultiTargeting\\TrustPlus.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.TrustPlus.props",
+      "PackagePath": "buildTransitive\\TrustPlus.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

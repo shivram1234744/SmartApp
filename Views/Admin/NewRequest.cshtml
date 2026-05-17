@@ -1,0 +1,401 @@
+﻿@model TrustPlus.Models.VerificationVM;
+
+@{
+    ViewData["Title"] = "NewRequest";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!-- Bootstrap Icons (Agar aapke _Layout.cshtml mein nahi hai toh yeh zaroori hai) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+    /* Sirf Form aur Cards ki CSS */
+    .view-wrapper {
+        background-color: #f8f9fa; /* Light background for the form area */
+        padding: 30px 20px;
+        flex-grow: 1;
+        overflow-y: auto; /* Taki content scroll ho sake */
+    }
+
+    .main-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .page-title {
+        color: #111827;
+        font-weight: 600;
+        font-size: 1.75rem;
+        margin-bottom: 5px;
+    }
+
+    .page-subtitle {
+        color: #6b7280;
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+
+    .form-section {
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 24px 28px;
+        margin-bottom: 24px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .section-title {
+        font-weight: 600;
+        color: #111827;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+        color: #6b7280;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #111827;
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 10px 14px;
+        font-size: 0.95rem;
+        color: #111827;
+    }
+
+        .form-control:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.15);
+        }
+
+    .upload-area {
+        border: 2px dashed #d1d5db;
+        border-radius: 12px;
+        padding: 40px 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+        .upload-area:hover {
+            border-color: #6b7280;
+            background-color: #f9fafb;
+        }
+
+    .upload-icon {
+        font-size: 2rem;
+        color: #6b7280;
+        margin-bottom: 12px;
+    }
+
+    .upload-text {
+        color: #374151;
+        font-weight: 400;
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+    }
+
+    .upload-subtext {
+        color: #9ca3af;
+        font-size: 0.85rem;
+    }
+
+    .custom-select-card {
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 12px 16px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        background-color: #fff;
+        color: #374151;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+
+        .custom-select-card i {
+            font-size: 1.3rem;
+            margin-right: 12px;
+            color: #6b7280;
+        }
+
+    .btn-check:checked + .custom-select-card {
+        border-color: #3b82f6;
+        color: #2563eb;
+        background-color: #eff6ff;
+    }
+
+        .btn-check:checked + .custom-select-card i {
+            color: #2563eb;
+        }
+
+    .priority-btn {
+        justify-content: center;
+        padding: 8px 24px;
+        min-width: 100px;
+    }
+
+    .btn-check {
+        display: none;
+    }
+
+    /* default card */
+    .custom-select-card {
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 12px 16px;
+        cursor: pointer;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s;
+    }
+
+        /* hover effect */
+        .custom-select-card:hover {
+            border-color: #3b82f6;
+        }
+
+    /* selected state */
+    .btn-check:checked + .custom-select-card {
+        border-color: #3b82f6;
+        background-color: #eff6ff;
+        color: #2563eb;
+    }
+
+        /* icon color change */
+        .btn-check:checked + .custom-select-card i {
+            color: #2563eb;
+        }
+</style>
+
+<!-- Yaha se View ka main content shuru hota hai -->
+<div class="view-wrapper">
+    <div class="main-container">
+
+        @*   <div class="card info-card mb-4 border-0">
+            <div class="card-body p-4">
+                <h4 class="info-card-title">Assign Employee & Company</h4>
+                <div class="row g-4 d-flex justify-content-between">
+                   
+
+                    <div class="d-flex align-items-center gap-2">
+
+                        <select id="company"
+                                class="form-select w-auto shadow-sm  px-3 py-2      bg-light  fw-semibold ">
+                            <option>-- Select Company --</option>
+                        </select>
+                        <button id="saveComBtn" class="btn btn-primary m-2">Assign company</button>
+
+
+
+
+                        <select id="job"
+                                class="form-select w-auto shadow-sm px-3 py-2      bg-light  fw-semibold ">
+             
+                            <option>-- Select Employee --</option>
+                        </select>
+                        <button id="saveJobBtn" class="btn btn-primary m-2">Assign</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>*@
+     <form asp-action="CreateRequest" method="post" enctype="multipart/form-data">
+            
+            <!-- Page Header -->
+            <h1 class="page-title">New Verification Request</h1>
+            <p class="page-subtitle">Submit candidate details for background verification</p>
+
+            <!-- 1. Candidate Information Section -->
+            <div class="form-section">
+                <h4 class="section-title mb-4">Candidate Information</h4>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <label class="form-label">Full Name</label>
+                        <input asp-for="Name" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input asp-for="Email" type="email" class="form-control" placeholder="">
+                    </div>
+                  
+                    <div class="col-md-6">
+                        <label class="form-label">Phone Number</label>
+                        <input asp-for="Mobile" type="tel" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Date of Birth</label>
+                        <input asp-for="DOB" type="date" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Position Applied For</label>
+                        <input asp-for="Position" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Department</label>
+                        <input asp-for="Department" type="text" class="form-control" placeholder="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Document Upload Section -->
+            <div class="form-section">
+                <h4 class="section-title">Document Upload</h4>
+                <p class="section-subtitle">Upload candidate documents (Aadhar, PAN, certificates, etc.)</p>
+                <label for="file-upload" class="upload-area w-100 d-block">
+                    <i class="bi bi-upload upload-icon"></i>
+                    <div class="upload-text">Click to upload or drag files here</div>
+                    <div class="upload-subtext">PDF, JPG, PNG — Max 10MB each</div>
+
+                    <!-- 👇 NEW -->
+                    <div id="fileName" style="margin-top:10px; font-size:13px; color:#2563eb;"></div>
+
+                    <input asp-for="DocumentPath" type="file" id="file-upload"
+                           class="d-none" multiple accept=".pdf,.jpg,.jpeg,.png">
+                </label>
+            </div>
+
+            <!-- 3. Verification Types Section -->
+            <div class="form-section">
+                <h4 class="section-title">Verification Types</h4>
+                <p class="section-subtitle">Select the checks you need performed</p>
+                <div class="row g-3">
+                    @if (ViewBag.Data != null)
+                    {
+                        foreach (var row in ViewBag.Data)
+                        {
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <input name="VerifyTypes" type="checkbox"
+                                       class="btn-check"
+                                       value="@row.Id"
+                                       id="check_@row.Id" autocomplete="off">
+
+                                <label class="custom-select-card" for="check_@row.Id">
+                                    <i class="bi bi-fingerprint"></i> @row.Name
+                                </label>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+
+            <!-- 4. Priority Section -->
+            <div class="form-section mb-5">
+                <h4 class="section-title mb-3">Priority</h4>
+                <div class="d-flex gap-3">
+                    <div>
+                        <input asp-for="Priority" type="radio" class="btn-check" name="priority" value="Normal" id="priority-normal" checked>
+                        <label class="custom-select-card priority-btn" for="priority-normal">
+                            Normal
+                        </label>
+                    </div>
+                    <div>
+                        <input asp-for="Priority" type="radio" class="btn-check" name="priority" value="Urgent" id="priority-urgent">
+                        <label class="custom-select-card priority-btn" for="priority-urgent">
+                            Urgent
+                        </label>
+                    </div>
+                </div>
+            
+                <!-- Action Buttons -->
+                <div class="mt-4 pt-3 border-top d-flex justify-content-end gap-2">
+                    <button type="button" class="btn btn-light border">Cancel</button>
+                    <button type="submit" class="btn btn-primary px-4">Submit Request</button>
+                </div>
+            </div>
+
+     </form>
+    </div>
+</div>
+<script>
+    document.getElementById("file-upload").addEventListener("change", function () {
+        let fileDisplay = document.getElementById("fileName");
+
+        if (this.files.length > 0) {
+            let names = [];
+
+            for (let i = 0; i < this.files.length; i++) {
+                names.push(this.files[i].name);
+            }
+
+            fileDisplay.innerHTML = "Selected: <br>" + names.join("<br>");
+        } else {
+            fileDisplay.innerHTML = "";
+        }
+    });
+
+
+
+    $(document).ready(function () {
+        $.ajax({
+            url: '/Admin/GetData',
+            type: 'GET',
+            success: function (data) {
+                // Clear old options
+                $("#job").empty();
+
+                // Add default option
+                $("#job").append('<option value="">-- Select Emp --</option>');
+
+                // Build options
+                var row = '';
+                $.each(data, function (i, e) {
+                    row += `<option value="${e.employeeId}">${e.name}</option>`;
+                });
+
+                // Append to dropdown
+                $("#job").append(row);
+            },
+            error: function (xhr, status, error) {
+                alert("Error: " + error);
+            }
+        });
+
+    })
+
+
+    $(document).on("click", "#saveJobBtn", function () {
+
+        var empid = $("#job").val();
+        var companyId = $("#company").val();
+
+        // Get clientId from URL
+        var pathParts = window.location.pathname.split('/');
+        var clientId = pathParts[pathParts.length - 1];
+
+        if (!empid) {
+            alert("Please select an employee..");
+            return;
+        }
+
+        $.ajax({
+            url: '/Admin/SaveEmpInClient',
+            type: 'POST',
+            data: { id: empid, clientId: clientId, companyId: companyId, },
+            success: function (response) {
+                if (response.success) {
+                    alert(response.message);
+                    location.href = '/Admin/Dashboard'
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function (res) {
+                alert("Server Error");
+            }
+        });
+    });
+
+</script>

@@ -1,0 +1,331 @@
+﻿@model List<TrustPlus.Models.EmployeeMst>
+@{
+    ViewData["Title"] = "EmployeeMst";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<style>
+    .badge-pending {
+        background: orange;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .badge-progress {
+        background: blue;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .badge-complete {
+        background: green;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+</style>
+
+<div class="pg-body">
+    <div class="pg-intro d-flex justify-content-between align-items-center mb-3">
+        <h2>All Employees Data</h2>
+        <button class="btn btn-n btn-sm" data-bs-toggle="modal" data-bs-target="#employeeModal">+ Add Employee</button>
+     
+    </div>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+               
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="employeeModalLabel">Add Employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Example form fields -->
+                    <form id="employeeForm" method="post">
+                       
+
+                        <div class="mb-3">
+                            <label class="form-label">Employee Name</label>
+                            <input type="text" class="form-control" name="Name" placeholder="Enter name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control"name="Email" placeholder="Enter email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control"name="Password" placeholder="Enter Password">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mobile Number</label>
+                            <input type="Number" class="form-control" name="MobileNo" placeholder="Enter Mobile Number">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" name="Address" placeholder="Enter Address">
+                        </div>
+                        <div class="mb-3">
+                      <button class="btn btn-n btn-lg" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+               
+
+            </div>
+        </div>
+    </div>
+
+    <!--update -->
+    <div class="modal fade" id="employeeModalUpdate" tabindex="-1" aria-labelledby="employeeModalUpdateLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="employeeModalUpdateLabel">Update Employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="employeeFormUpdate" method="post">
+                        <input type="hidden" name="EmployeeId" />
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" name="Name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" name="Email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" name="Password">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mobile No</label>
+                            <input type="text" class="form-control" name="MobileNo">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <input type="text" class="form-control" name="Address">
+                        </div>
+                        <button class="btn btn-success" type="submit">Update</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--update -->
+
+
+
+
+
+
+  <!-- @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+            @TempData["SuccessMessage"]
+
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert">
+            </button>
+
+        </div>
+    }-->
+
+
+
+
+
+   
+    <div class="card">
+        <div class="cd-hd d-flex align-items-center justify-content-between"><span class="cd-t">All Users (2,926)</span></div>
+        <div class="tw">
+            <table class="tbl">
+
+                <thead>
+                    <tr><th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>MobileNumber</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                      
+                    </tr>
+                </thead>
+                <tbody id="clientTable">
+
+                
+                </tbody>
+
+
+            </table>
+        </div>
+        <div class="pg-row d-flex justify-content-between align-items-center"><span class="pg-info">Showing 1–3 of 2,926</span><div class="pg-btns d-flex gap-1"><button class="btn btn-g btn-sm">← Prev</button><button class="btn btn-n btn-sm">1</button><button class="btn btn-g btn-sm">2</button><button class="btn btn-g btn-sm">Next →</button></div></div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        // Load employees on page load
+        loadEmployees();
+
+        // Submit form
+        $("#employeeForm").on("submit", function (e) {
+            e.preventDefault();
+
+          
+            var formData = new FormData(this);
+
+           
+
+
+           
+            $.ajax({
+                url: '/Admin/AddEmployee',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        loadEmployees(); // refresh table
+                        $('#employeeModal').modal('hide');
+                        $('#employeeModal').reset();
+                 
+                    } else {
+                        alert(response.message);
+                        console.log(response.errors);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert("Error: " + error);
+                }
+            });
+        });
+
+        // Function to load employees
+        function loadEmployees() {
+            $.ajax({
+                url: '/Admin/GetData',
+                type: 'GET',
+                success: function (data) {
+                    var tbody = $("#clientTable");
+                    tbody.empty();
+                    $.each(data, function (i, emp) {
+                        tbody.append(
+                            "<tr>" +
+                            "<td>" + emp.employeeId + "</td>" +
+                            "<td>" + emp.name + "</td>" +
+                            "<td>" + emp.email + "</td>" +
+                            "<td>" + emp.password + "</td>" +
+                            "<td>" + emp.mobileNo + "</td>" +
+                            "<td>" + emp.address + "</td>" +
+                            "<td>" +
+                            "<button class='btn btn-warning btn-sm edit-btn' data-id='" + emp.employeeId + "'>Edit</button> " +
+                            "<button class='btn btn-danger btn-sm delete-btn' data-id='" + emp.employeeId + "'>Delete</button>" +
+                            "</td>" +
+                            "</td>" +
+                            "</tr>"
+                        );
+                    });
+                },
+                error: function (xhr, status, error) {
+                    alert("Error: " + error);
+                }
+            });
+        }
+
+
+        $(document).on("click", ".delete-btn", function () {
+            var id = $(this).data("id");
+
+            if (confirm("Are you sure you want to delete this employee?")) {
+                $.ajax({
+                    url: '/Admin/DeleteEmployee',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (response) {
+                        console.log(response);
+                        if (response.success) {
+                            alert(response.message);
+
+
+                            loadEmployees();
+
+
+                            // location.reload();
+                        } else {
+                            alert(response.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error: " + error);
+                    }
+                });
+            }
+        });
+
+        $("#employeeFormUpdate").on("submit", function (e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                url: '/Admin/UpdateEmployee',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (res) {
+                    alert(res.message);
+                    $('#employeeModalUpdate').modal('hide');
+                    $('#employeeModalUpdate')reset()
+                    loadEmployees();
+                }
+            });
+        });
+    });
+
+    // Delete button click
+
+
+    // Update Employee
+
+
+    // Edit button click  open update modal
+    $(document).on("click", ".edit-btn", function () {
+        var id = $(this).data("id");
+        $.ajax({
+            url: '/Admin/GetEmployeeById',
+            type: 'GET',
+            data: { id: id },
+            success: function (emp) {
+                $("#employeeFormUpdate [name='EmployeeId']").val(emp.employeeId);
+                $("#employeeFormUpdate [name='Name']").val(emp.name);
+                $("#employeeFormUpdate [name='Email']").val(emp.email);
+                $("#employeeFormUpdate [name='Password']").val(emp.password);
+                $("#employeeFormUpdate [name='MobileNo']").val(emp.mobileNo);
+                $("#employeeFormUpdate [name='Address']").val(emp.address);
+                $('#employeeModalUpdate').modal('show');
+            }
+        });
+    });
+
+</script>
+

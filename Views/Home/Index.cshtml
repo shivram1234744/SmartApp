@@ -1,0 +1,375 @@
+﻿@model TrustPlus.Models.LoginModel;
+@* @{
+    ViewData["Title"] = "Home Page";
+} *@
+
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ExamControl AI — Online Examination Control System</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="ex-styles.css" rel="stylesheet"/>
+</head>
+
+<style>
+:root{--s900:#060D1F;--s800:#0A1330;--in5:#4338CA;--in4:#6366F1;--in3:#818CF8;--cy5:#0891B2;--cy3:#22D3EE;--s200:#A8B8F0;--amber:#D97706;--green:#059669;--fd:'Outfit',sans-serif;--fb:'DM Sans',sans-serif;}
+.bg-mesh{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse at 15% 50%,rgba(67,56,202,.35) 0%,transparent 55%),radial-gradient(ellipse at 85% 25%,rgba(8,145,178,.18) 0%,transparent 50%),linear-gradient(160deg,#060D1F 0%,#080e22 100%);}
+.bg-grid{position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:38px 38px;}
+.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.15;animation:fl 12s ease-in-out infinite;}
+.b1{width:600px;height:600px;background:radial-gradient(circle,var(--in5),transparent);top:-150px;left:-150px;}
+.b2{width:400px;height:400px;background:radial-gradient(circle,var(--cy5),transparent);bottom:-80px;right:0;animation-delay:-6s;}
+.b3{width:300px;height:300px;background:radial-gradient(circle,var(--amber),transparent);top:40%;right:25%;animation-delay:-3s;opacity:.08;}
+@@keyframes fl{0%,100%{transform:translateY(0);}50%{transform:translateY(-28px);}}
+.page{position:relative;z-index:1;min-height:100vh;}
+.ex-nav{background:rgba(6,13,31,.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);padding:18px 48px;position:sticky;top:0;z-index:100;}
+.lm{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--in5),var(--in4));box-shadow:0 4px 14px rgba(67,56,202,.4);}
+.ln{font-family:var(--fd);font-size:17px;font-weight:800;color:#fff;letter-spacing:-.03em;}
+.ln em{font-style:normal;color:var(--cy3);}
+.nl{padding:6px 14px;font-size:13px;font-weight:500;color:rgba(255,255,255,.4);border-radius:8px;cursor:pointer;transition:.18s;text-decoration:none;}
+.nl:hover{color:#fff;background:rgba(255,255,255,.07);}
+.nl.nla{color:#fff;font-weight:600;}
+.nbtn-g{padding:8px 18px;border-radius:9px;font-size:13px;font-weight:600;border:1.5px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);background:transparent;cursor:pointer;transition:.18s;}
+.nbtn-g:hover{border-color:rgba(255,255,255,.3);color:#fff;}
+.nbtn-p{padding:8px 20px;border-radius:9px;font-size:13px;font-weight:700;border:none;background:linear-gradient(135deg,var(--in5),var(--in4));color:#fff;cursor:pointer;transition:.18s;box-shadow:0 4px 14px rgba(67,56,202,.4);}
+.nbtn-p:hover{box-shadow:0 6px 20px rgba(67,56,202,.5);transform:translateY(-1px);}
+.eyebrow{display:inline-block;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:12px;font-weight:600;letter-spacing:.07em;padding:5px 14px;border-radius:99px;margin-bottom:24px;}
+.edot{width:7px;height:7px;border-radius:50%;background:var(--cy3);display:inline-block;vertical-align:middle;margin-right:6px;animation:blink 2s ease-in-out infinite;}
+@@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+h1{font-family:var(--fd);font-size:62px;font-weight:800;line-height:1.04;letter-spacing:-.05em;color:#fff;margin-bottom:18px;}
+h1 .g1{background:linear-gradient(90deg,var(--s200),var(--in3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+h1 .g2{background:linear-gradient(90deg,var(--cy3),#86EFAC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.45);line-height:1.75;margin:0 auto 40px;max-width:580px;}
+.vt-btn{padding:8px 22px;border-radius:99px;font-size:13px;font-weight:600;cursor:pointer;transition:.18s;border:1.5px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);background:transparent;}
+.vt-btn.act{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25);}
+.zcard{background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.07);border-radius:18px;padding:26px 22px;cursor:pointer;transition:all .25s;text-decoration:none;display:block;position:relative;overflow:hidden;}
+.zcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:18px 18px 0 0;}
+.zcard.za::before{background:linear-gradient(90deg,var(--amber),#FCD34D);}
+.zcard.zf::before{background:linear-gradient(90deg,var(--green),#34D399);}
+.zcard.zs::before{background:linear-gradient(90deg,var(--in5),var(--cy3));}
+.zcard:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.3);}
+.zc-icon{width:48px;height:48px;border-radius:13px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;}
+.zi-a{background:rgba(217,119,6,.15);} .zi-f{background:rgba(5,150,105,.15);} .zi-s{background:rgba(67,56,202,.18);}
+.zc-title{font-family:var(--fd);font-size:16px;font-weight:800;color:#fff;margin-bottom:7px;}
+.zc-desc{font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:14px;}
+.zc-cta{font-size:12px;font-weight:700;}
+.za .zc-cta{color:#FCD34D;} .zf .zc-cta{color:#6EE7B7;} .zs .zc-cta{color:var(--in3);}
+.sn{font-family:var(--fd);font-size:28px;font-weight:800;color:#fff;}
+.sn.c1{background:linear-gradient(135deg,var(--in4),var(--in3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sn.c2{background:linear-gradient(135deg,var(--cy3),#86EFAC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sn.c3{background:linear-gradient(135deg,var(--amber),#FCD34D);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sl{font-size:11px;color:rgba(255,255,255,.3);margin-top:3px;}
+.sep{width:1px;height:34px;background:rgba(255,255,255,.07);}
+.fchip{display:inline-block;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:99px;padding:6px 14px;font-size:12px;color:rgba(255,255,255,.4);margin:3px;}
+.ql-tabs{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:4px;}
+.ql-tab{padding:8px 6px;border-radius:9px;font-size:12px;font-weight:700;color:rgba(255,255,255,.35);border:none;background:transparent;cursor:pointer;transition:.18s;width:100%;}
+.ql-tab.act{background:rgba(255,255,255,.1);color:#fff;}
+.ql-tab.ta.act{background:rgba(217,119,6,.2);color:#FCD34D;}
+.ql-tab.tf.act{background:rgba(5,150,105,.18);color:#6EE7B7;}
+.ql-tab.ts.act{background:rgba(67,56,202,.25);color:var(--in3);}
+.ql-form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;display:none;}
+.ql-form.act{display:block;}
+.ll{display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,.4);margin-bottom:5px;letter-spacing:.03em;}
+.li{width:100%;padding:10px 13px;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.08);border-radius:9px;font-size:13px;color:#fff;margin-bottom:12px;transition:.18s;}
+.li:focus{outline:none;border-color:rgba(129,140,248,.5);background:rgba(255,255,255,.08);}
+.li::placeholder{color:rgba(255,255,255,.2);}
+.li option{background:#0F1C45;color:#fff;}
+.lb{width:100%;padding:11px;border-radius:9px;font-size:14px;font-weight:700;border:none;cursor:pointer;transition:.18s;color:#fff;font-family:var(--fd);}
+.lb.la{background:linear-gradient(135deg,var(--amber),#FBBF24);color:#060D1F;}
+.lb.lf{background:linear-gradient(135deg,var(--green),#34D399);color:#060D1F;}
+.lb.ls{background:linear-gradient(135deg,var(--in5),var(--in4));}
+.lfoot{text-align:center;margin-top:12px;font-size:12px;color:rgba(255,255,255,.3);}
+.lfoot a{color:var(--cy3);font-weight:600;cursor:pointer;}
+.ai-strip{background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:28px 48px;}
+.ai-icon{font-size:28px;margin-bottom:8px;}
+.ai-title{font-family:var(--fd);font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;}
+.ai-desc{font-size:11px;color:rgba(255,255,255,.35);line-height:1.6;}
+footer{border-top:1px solid rgba(255,255,255,.06);padding:16px 48px;}
+.fc{font-size:11px;color:rgba(255,255,255,.2);}
+.fl-lnk{font-size:11px;color:rgba(255,255,255,.2);cursor:pointer;transition:.15s;text-decoration:none;}
+.fl-lnk:hover{color:rgba(255,255,255,.6);}
+
+/* ── NAV MOBILE ── */
+.ex-nav-mob-btn{display:none;background:transparent;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;width:38px;height:38px;cursor:pointer;color:rgba(255,255,255,.7);align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;}
+.ex-nav-mob-menu{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(6,13,31,.97);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.07);padding:8px 0;z-index:99;}
+.ex-nav-mob-menu.open{display:flex;}
+.ex-nav-mob-menu .nl{padding:11px 24px;border-bottom:1px solid rgba(255,255,255,.05);border-radius:0;font-size:14px;display:block;}
+.ex-nav-mob-menu .nbtn-g,.ex-nav-mob-menu .nbtn-p{margin:8px 16px;display:block;text-align:center;}
+@@media(max-width:991px){.ex-nav{padding:12px 20px !important;position:relative !important;}.ex-nav-links{display:none !important;}.ex-nav-right{display:none !important;}.ex-nav-mob-btn{display:flex !important;}}
+@@media(max-width:576px){h1{font-size:32px;letter-spacing:-.03em;} .ex-nav{padding:12px 16px;} .ai-strip{padding:20px 16px;} footer{padding:16px;}}
+/* ===== Loader ===== */
+
+#loaderOverlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(6,13,31,0.55);
+    backdrop-filter: blur(6px);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-box{
+    text-align: center;
+}
+
+.loader-text{
+    color: white;
+    font-weight: 600;
+    letter-spacing: .04em;
+}
+
+/* ===== Toast ===== */
+
+#toastMsg{
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 999999;
+    min-width: 280px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.toast-success{
+    background: linear-gradient(135deg,#059669,#34D399);
+}
+
+.toast-error{
+    background: linear-gradient(135deg,#DC2626,#EF4444);
+}
+
+
+
+</style>
+<div class="bg-mesh"></div>
+<div class="bg-grid"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+<div class="page">
+<nav class="ex-nav d-flex align-items-center">
+<div class="d-flex align-items-center gap-2">
+<div class="lm d-flex align-items-center justify-content-center"><svg fill="none" height="18" stroke="#fff" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg></div>
+<span class="ln">Trust<em>Plus</em></span>
+</div>
+<div class="d-none d-md-flex align-items-center ms-4 gap-1">
+<span class="nl nla" onclick="sv('zones')">Home</span>
+<span class="nl" onclick="sv('login')">Sign In</span>
+<a class="nl" href="admin-dashboard.html">Admin</a>
+<a class="nl" href="Executor-dashboard.html">Executor</a>
+<a class="nl" href="Client-dashboard.html">Client</a>
+</div>
+<div class="ms-auto d-flex align-items-center gap-2 ex-nav-right">
+<button class="nbtn-g" onclick="sv('login')">Sign In</button>
+<button class="nbtn-p" onclick="location.href='Client-dashboard.html'">Client Portal</button>
+</div>
+<button aria-label="Open menu" class="ex-nav-mob-btn" id="ex-nav-mob-btn"><svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg></button><div class="ex-nav-mob-menu" id="ex-nav-mob-menu"><a class="nl" href="admin-dashboard.html">Admin</a><a class="nl" href="Executor-dashboard.html">Executor</a><a class="nl" href="Client-dashboard.html">Client</a></div></nav>
+<main class="py-5 text-center">
+<div style="max-width:740px;margin:0 auto;padding:0 24px;">
+<div class="eyebrow"><span class="edot"></span>AI-Powered Identity Verification & Secure Access Platform</div>
+<h1>
+TrustPlus.<br/>
+<span class="g1">Verify.</span><br/>
+<span class="g2">Trust.</span>
+</h1>
+<p class="hero-sub">
+A complete digital identity and verification platform with AI-powered face recognition, secure authentication, and real-time validation — built for modern applications.
+</p>
+<div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
+<button class="vt-btn act" id="vt-zones" onclick="sv('zones')">Choose Your Zone</button>
+<button class="vt-btn" id="vt-login" onclick="sv('login')">Quick Sign In</button>
+</div>
+<div id="view-zones">
+<div class="row g-3 mb-4" style="max-width:800px;margin-left:auto;margin-right:auto;">
+<div class="col-12 col-md-4"><a class="zcard za" href="admin-dashboard.html"><div class="zc-icon zi-a">⚙️</div><div class="zc-title">Admin Zone</div><div class="zc-desc">Full institutional control — manage users, schedule exams, configure AI proctoring, monitor results and generate analytics reports.</div><div class="zc-cta">Enter Admin Panel →</div></a></div>
+<div class="col-12 col-md-4"><a class="zcard zf" href="Executor-dashboard.html"><div class="zc-icon zi-f">🎓</div><div class="zc-title">Executor Zone</div><div class="zc-desc">Create and schedule exams, upload questions, monitor live attempts with AI proctoring alerts, grade and publish results.</div><div class="zc-cta">Enter Executor Portal →</div></a></div>
+<div class="col-12 col-md-4"><a class="zcard zs" href="Client-dashboard.html"><div class="zc-icon zi-s">📋</div><div class="zc-title">Client Zone</div><div class="zc-desc">View upcoming exams, complete face authentication, attempt exams with timer, receive AI proctoring alerts, and view results.</div><div class="zc-cta">Enter Client Portal →</div></a></div>
+</div>
+<div class="d-flex justify-content-center align-items-center gap-4 pb-4 flex-wrap">
+<div class="text-center"><div class="sn c1">2,840</div><div class="sl">Clients</div></div>
+<div class="sep"></div>
+<div class="text-center"><div class="sn" style="color:#fff">86</div><div class="sl">Executor</div></div>
+<div class="sep"></div>
+<div class="text-center"><div class="sn c3">99.2%</div><div class="sl">Face Auth Accuracy</div></div>
+
+</div>
+<div class="pb-3">
+<span class="fchip">🔐 Secure Authentication</span>
+<span class="fchip">📷 Face Recognition</span>
+<span class="fchip">🧠 AI Identity Verification</span>
+<span class="fchip">⚡ Real-time Validation</span>
+<span class="fchip">🛡 Fraud Detection</span>
+<span class="fchip">🔑 Access Control</span>
+<span class="fchip">📊 Activity Monitoring</span>
+<span class="fchip">🔔 Smart Alerts</span>
+</div>
+</div>
+<div id="view-login" style="display:none;max-width:440px;margin:0 auto;">
+<div class="ql-tabs mb-2">
+<div class="row g-1">
+<div class="col-4"><button class="ql-tab ta act" id="qt-adm" onclick="st('adm')">⚙ Admin</button></div>
+<div class="col-4"><button class="ql-tab tf" id="qt-fac" onclick="st('fac')">🎓 Executor</button></div>
+<div class="col-4"><button class="ql-tab ts" id="qt-std" onclick="st('std')">📋 Client</button></div>
+</div>
+</div>
+<div class="ql-form act" id="f-adm">
+
+    <input type="hidden" id="RoleId" value="1" />
+
+    <label class="ll">Admin Email</label>
+    <input id="Email" class="li" placeholder="admin@college.edu" />
+
+    <label class="ll">Password</label>
+    <input id="Password" class="li" placeholder="••••••••" type="password" />
+
+    <button type="button" class="lb la" onclick="login()">
+        Sign In to Admin Panel →
+    </button>
+
+    <div class="lfoot">Restricted to authorised administrators only</div>
+</div>
+<div class="ql-form" id="f-fac">
+<label class="ll">Department</label><select class="li"><option>Computer Science</option><option>Mathematics</option><option>Physics</option><option>Electronics</option></select>
+<label class="ll">Executor ID / Email</label><input class="li" placeholder="Executor@college.edu"/>
+<label class="ll">Password</label><input class="li" placeholder="••••••••" type="password"/>
+<button class="lb lf" onclick="location.href='Executor-dashboard.html'">Sign In to Executor Portal →</button>
+<div class="lfoot">Need access? Contact your department admin</div>
+</div>
+<div class="ql-form" id="f-std">
+<label class="ll">Roll Number / Email</label><input class="li" placeholder="CS2021001 or rahul@college.edu"/>
+<label class="ll">Password</label><input class="li" placeholder="••••••••" type="password"/>
+<button class="lb ls" onclick="location.href='Client-dashboard.html'">Sign In to Client Portal →</button>
+<div class="lfoot">New Client? <a href="Client-register.html">Register here →</a></div>
+</div>
+</div>
+</div>
+</main>
+<div class="ai-strip">
+<div class="row g-4 text-center" style="max-width:960px;margin:0 auto;">
+<div class="col-6 col-md-3"><div class="ai-icon">🔐</div><div class="ai-title">Face Authentication</div><div class="ai-desc">Webcam-based identity verification before exam entry. 99.2% accuracy with landmark mapping.</div></div>
+<div class="col-6 col-md-3"><div class="ai-icon">👁</div><div class="ai-title">Live Monitoring</div><div class="ai-desc">Periodic face captures during exam. Detects face absence, multiple faces, and identity switches.</div></div>
+<div class="col-6 col-md-3"><div class="ai-icon">🚨</div><div class="ai-title">Cheat Detection</div><div class="ai-desc">Monitors tab switching, screen minimization, multiple faces, and no-face scenarios in real-time.</div></div>
+<div class="col-6 col-md-3"><div class="ai-icon">📋</div><div class="ai-title">Proctoring Report</div><div class="ai-desc">Generates post-exam violation log with timestamps. Accessible by admin and Executor for review.</div></div>
+</div>
+</div>
+<!-- Loader -->
+<div id="loaderOverlay">
+
+    <div class="loader-box">
+        <div class="spinner-border text-light" role="status"></div>
+
+        <div class="mt-3 loader-text">
+            Please wait...
+        </div>
+    </div>
+
+</div>
+
+<!-- Toast Message -->
+<div id="toastMsg"></div>
+<footer>
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+<span class="fc">© 2026 ExamControl AI · Online Examination Control System with AI Proctoring · Final Year Project</span>
+<div class="d-flex gap-3"><a class="fl-lnk" href="admin-dashboard.html">Admin</a><a class="fl-lnk" href="Executor-dashboard.html">Executor</a><a class="fl-lnk" href="Client-dashboard.html">Client</a><span class="fl-lnk" onclick="sv('login')">Sign In</span></div>
+</div>
+</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function sv(v){document.getElementById('view-zones').style.display=v==='zones'?'block':'none';document.getElementById('view-login').style.display=v==='login'?'block':'none';document.getElementById('vt-zones').classList.toggle('act',v==='zones');document.getElementById('vt-login').classList.toggle('act',v==='login');}
+function st(t){['adm','fac','std'].forEach(x=>{document.getElementById('qt-'+x).classList.toggle('act',x===t);document.getElementById('f-'+x).classList.toggle('act',x===t);});}
+</script>
+<script>
+/* ── INDEX NAV MOBILE TOGGLE ── */
+(function(){
+  var btn  = document.getElementById('ex-nav-mob-btn');
+  var menu = document.getElementById('ex-nav-mob-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function(e){ e.stopPropagation(); menu.classList.toggle('open'); });
+  document.addEventListener('click', function(e){ if (!e.target.closest('.ex-nav')) menu.classList.remove('open'); });
+})();
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+function showLoader() {
+    $("#loaderOverlay").css("display", "flex");
+}
+
+function hideLoader() {
+    $("#loaderOverlay").hide();
+}
+
+function showToast(message, type) {
+
+    $("#toastMsg")
+        .removeClass("toast-success toast-error")
+        .addClass(type)
+        .html(message)
+        .fadeIn();
+
+    setTimeout(function () {
+        $("#toastMsg").fadeOut();
+    }, 3000);
+}
+
+function login() {
+
+    var model = {
+        Email: $("#Email").val(),
+        Password: $("#Password").val()
+    };
+
+    showLoader();
+
+    $.ajax({
+        url: '/Home/Login',
+        type: 'POST',
+        data: model,
+
+        success: function (res) {
+
+            hideLoader();
+
+            if (res.success) {
+
+                showToast("Login Successful ✓", "toast-success");
+
+                setTimeout(function () {
+
+                    if (res.role === "Admin") {
+                        window.location.href = "/Admin/Dashboard";
+
+                    } else if (res.role === "Client") {
+                        window.location.href = "/Client/Dashboard";
+
+                    } else {
+                        window.location.href = "/Executor/Dashboard";
+                    }
+
+                }, 1200);
+
+            } else {
+
+                showToast("Invalid Credentials ✕", "toast-error");
+            }
+        },
+
+        error: function () {
+
+            hideLoader();
+
+            showToast("Something went wrong", "toast-error");
+        }
+    });
+}
+
+</script>

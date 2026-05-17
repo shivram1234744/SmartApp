@@ -1,0 +1,228 @@
+﻿@model List<TrustPlus.Models.ClientDtl>
+@{
+    ViewData["Title"] = "AssignedJob";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+<style>
+    .badge-pending {
+        background: orange;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .badge-progress {
+        background: blue;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .badge-complete {
+        background: green;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+</style>
+
+<div class="pg-body">
+    <div class="pg-intro">
+        <h2>Assigned Jobs</h2>
+    
+    </div>
+
+  
+  
+
+
+
+
+    <div class="card" style="margin-bottom:14px">
+        <div class="d-flex gap-2 flex-wrap align-items-center">
+            <div class="hs" style="flex:1;min-width:180px">
+                <svg fill="none" height="14" stroke="var(--g300)" stroke-width="2" viewbox="0 0 24 24" width="14">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search by name, ID…" />
+            </div>
+            <select class="fi" style="width:150px" id="statusFilter">
+                <option value="">All Status</option>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Complete">Complete</option>
+            </select>
+
+            <select class="fi" style="width:150px" id="priorityFilter">
+                <option value="">All Priority</option>
+                <option value="Urgent">Urgent</option>
+                <option value="Normal">Normal</option>
+            </select>
+            @*   <a asp-action="NewRequest" class="btn btn-n btn-sm">+ New Request</a>*@
+        </div>
+    </div>
+    <div class="card">
+        <div class="cd-hd d-flex align-items-center justify-content-between"><span class="cd-t">All Users (2,926)</span></div>
+        <div class="tw">
+            <table class="tbl">
+
+                <thead>
+                    <tr>
+                        <th>Candidate Name</th>
+                        <th>Case ID</th>
+                        <th>Submitted</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                        <th>Assigned Employee</th>
+
+                    </tr>
+                </thead>
+                <tbody id="clientTable">
+
+                    @if (Model != null)
+                    {
+                        foreach (var Item in Model)
+                        {
+                            <tr onclick="ViewDetails(@Item.Id)" style="cursor:pointer;">
+                                <td><strong>@Item.Name</strong></td>
+                                <td>@Item.Id</td>
+                                <td>@Item.CreatedAt?.ToString("dd MMM · hh:mm tt")</td>
+                                <td>
+                                    <div style="width:120px;">
+
+                                        <div class="d-flex justify-content-between small mb-1">
+                                            <span>@Item.Progress%</span>
+                                        </div>
+
+                                        <div class="progress" style="height:6px;">
+                                            <div class="progress-bar bg-success"
+                                                 style="width:@Item.Progress%"></div>
+                                        </div>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    @{
+                                        var statusClass = "";
+
+                                        switch (Item.Status)
+                                        {
+                                            case "Pending":
+                                                statusClass = "b-live";
+                                                break;
+
+                                            case "In Progress":
+                                                statusClass = "bg-primary";
+                                                break;
+
+                                            case "Complete":
+                                                statusClass = "b-completed";
+                                                break;
+
+                                            default:
+                                                statusClass = "b-scheduled";
+                                                break;
+                                        }
+                                    }
+
+                                    <span class="badge   @statusClass">
+                                        ●@Item.Status
+                                    </span>
+                                </td>
+                                <td>
+                                    @{
+                                        var PriorityClass = "";
+
+                                        switch (Item.Priority)
+                                        {
+                                            case "Urgent":
+                                                PriorityClass = "b-live";
+                                                break;
+
+                                            case "Normal":
+                                                PriorityClass = "b-completed";
+                                                break;
+
+
+                                            default:
+                                                statusClass = "b-scheduled";
+                                                break;
+                                        }
+                                    }
+
+
+                                    <span class="badge @PriorityClass">●@Item.Priority</span>
+                                </td>
+
+                                <td>
+                                    @Item.EmployeeName
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                </tbody>
+
+
+            </table>
+        </div>
+        <div class="pg-row d-flex justify-content-between align-items-center"><span class="pg-info">Showing 1–3 of 2,926</span><div class="pg-btns d-flex gap-1"><button class="btn btn-g btn-sm">← Prev</button><button class="btn btn-n btn-sm">1</button><button class="btn btn-g btn-sm">2</button><button class="btn btn-g btn-sm">Next →</button></div></div>
+    </div>
+</div>
+<script>
+
+    // function ViewDetails(id) {
+    //     window.location.href = '/Admin/Details/' + id;
+    // }
+
+    const searchInput = document.getElementById("searchInput");
+    const statusFilter = document.getElementById("statusFilter");
+    const priorityFilter = document.getElementById("priorityFilter");
+
+    searchInput.addEventListener("keyup", filterTable);
+    statusFilter.addEventListener("change", filterTable);
+    priorityFilter.addEventListener("change", filterTable);
+
+    function filterTable() {
+
+        let searchValue = searchInput.value.toLowerCase();
+        let statusValue = statusFilter.value.toLowerCase();
+        let priorityValue = priorityFilter.value.toLowerCase();
+
+        let rows = document.querySelectorAll("#clientTable tr");
+
+        rows.forEach(function (row) {
+
+            let candidateName = row.cells[0]?.innerText.toLowerCase() || "";
+            let caseId = row.cells[1]?.innerText.toLowerCase() || "";
+            let status = row.cells[4]?.innerText.toLowerCase() || "";
+            let priority = row.cells[5]?.innerText.toLowerCase() || "";
+
+            let matchesSearch =
+                candidateName.includes(searchValue) ||
+                caseId.includes(searchValue);
+
+            let matchesStatus =
+                statusValue === "" || status.includes(statusValue);
+
+            let matchesPriority =
+                priorityValue === "" || priority.includes(priorityValue);
+
+            if (matchesSearch && matchesStatus && matchesPriority) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+
+        });
+    }
+
+</script>
+

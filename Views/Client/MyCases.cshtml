@@ -1,0 +1,123 @@
+﻿@model List<TrustPlus.Models.ClientDtl>
+
+@{
+    ViewData["Title"] = "MyCases";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<div class="pg-body">
+    <div class="pg-intro">
+        <h2>System Overview</h2>
+        <p>Real-time platform statistics and activity</p>
+    </div>
+   
+   
+  
+    <div class="card">
+        <div class="cd-hd d-flex align-items-center justify-content-between"><span class="cd-t">All Users (2,926)</span></div>
+        <div class="tw">
+            <table class="tbl">
+
+                <thead>
+                    <tr>
+                        <th>Candidate Name</th>
+                        <th>Case ID</th>
+                        <th>Submitted</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody id="clientTable">
+                           
+                    @if (Model != null)
+                    {
+                        foreach (var Item in Model)
+                        {
+                            <tr onclick="ViewDetails(@Item.Id)" style="cursor:pointer;">
+                                <td><strong>@Item.Name</strong></td>
+                                <td>@Item.Id</td>
+                                <td>@Item.CreatedAt?.ToString("dd MMM · hh:mm tt")</td>
+                                <td>
+                                    <div style="width:120px;">
+
+                                        <div class="d-flex justify-content-between small mb-1">
+                                            <span>@Item.Progress%</span>
+                                        </div>
+
+                                        <div class="progress" style="height:6px;">
+                                            <div class="progress-bar bg-success"
+                                                 style="width:@Item.Progress%"></div>
+                                        </div>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    @{
+                                        var statusClass = "";
+
+                                        switch (Item.Status)
+                                        {
+                                            case "Pending":
+                                                statusClass = "b-live";
+                                                break;
+
+                                            case "In Progress":
+                                                statusClass = "bg-primary";
+                                                break;
+
+                                            case "Complete":
+                                                statusClass = "b-completed";
+                                                break;
+
+                                            default:
+                                                statusClass = "b-scheduled";
+                                                break;
+                                        }
+                                    }
+
+                                    <span class="badge   @statusClass">
+                                        ●@Item.Status
+                                    </span>
+                                </td>
+                                <td>
+                                    @{
+                                        var PriorityClass = "";
+
+                                        switch (Item.Priority)
+                                        {
+                                            case "Urgent":
+                                                PriorityClass = "b-live";
+                                                break;
+
+                                            case "Normal":
+                                                PriorityClass = "b-completed";
+                                                break;
+
+                                           
+                                            default:
+                                                statusClass = "b-scheduled";
+                                                break;
+                                        }
+                                    }
+
+                                   
+                                    <span class="badge @PriorityClass">●@Item.Priority</span>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+
+                   
+            </table>
+        </div>
+        <div class="pg-row d-flex justify-content-between align-items-center"><span class="pg-info">Showing 1–3 of 2,926</span><div class="pg-btns d-flex gap-1"><button class="btn btn-g btn-sm">← Prev</button><button class="btn btn-n btn-sm">1</button><button class="btn btn-g btn-sm">2</button><button class="btn btn-g btn-sm">Next →</button></div></div>
+    </div>
+</div>
+
+<script>
+    function ViewDetails(id){
+    window.location.href = '/Client/Details/' + id;
+    }
+</script>

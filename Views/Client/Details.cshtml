@@ -1,0 +1,582 @@
+﻿@model TrustPlus.Models.ClientDtl;
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+<!-- Bootstrap Icons (Agar layout me na ho to) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+    /* ==========================================
+           View Specific Styles (Details Page)
+           ========================================== */
+    .details-wrapper {
+        background-color: #f8f9fa;
+        flex-grow: 1;
+        overflow-y: auto; /* Page scrollable rahega layout ke andar */
+        padding: 24px 32px;
+    }
+
+    .back-link {
+        color: #6b7280;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+        .back-link:hover {
+            color: #111827;
+        }
+
+    /* Overall Status Banner */
+    .status-banner {
+        background-color: #fff9f0; /* Light orange background */
+        border: 1px solid #fde6ce;
+        border-radius: 12px;
+        padding: 20px 24px;
+    }
+
+    .status-lbl {
+        color: #f59e0b; /* Amber/Orange */
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+
+    .status-val {
+        color: #f59e0b;
+        font-weight: 700;
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+    .status-id {
+        color: #f59e0b;
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    /* Pending Status */
+    .status-pending {
+        background-color: #fff9f0;
+        border: 1px solid #fde6ce;
+    }
+
+        .status-pending .status-lbl,
+        .status-pending .status-val,
+        .status-pending .status-id {
+            color: #f59e0b;
+        }
+
+    /* Complete Status */
+    .status-complete {
+        background-color: #ecfdf5;
+        border: 1px solid #a7f3d0;
+    }
+
+        .status-complete .status-lbl,
+        .status-complete .status-val,
+        .status-complete .status-id {
+            color: #059669;
+        }
+
+    /* Priority Badge Pending */
+    .priority-pending {
+        background-color: white;
+        color: #f59e0b;
+        border: 1px solid #fde6ce;
+    }
+
+    /* Priority Badge Complete */
+    .priority-complete {
+        background-color: white;
+        color: #059669;
+        border: 1px solid #a7f3d0;
+    }
+
+    /* Common Card Styling */
+    .info-card {
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .info-card-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 24px;
+    }
+
+    /* Info Grid Elements */
+    .info-item .icon {
+        color: #6b7280;
+        font-size: 1.1rem;
+        margin-top: 2px;
+    }
+
+    .info-item .lbl {
+        color: #6b7280;
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+    }
+
+    .info-item .val {
+        color: #111827;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    /* Table & Progress Bar */
+    .progress-custom {
+        height: 8px;
+        background-color: #f3f4f6;
+        border-radius: 10px;
+    }
+
+    /* Pending */
+    .badge-pending {
+        background-color: #fffbeb;
+        color: #d97706;
+        border: 1px solid #fde68a;
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 20px;
+    }
+
+    /* In Progress */
+    .badge-progress {
+        background-color: #eff6ff;
+        color: #2563eb;
+        border: 1px solid #93c5fd;
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 20px;
+    }
+
+    /* Completed */
+    .badge-completed {
+        background-color: #ecfdf5;
+        color: #059669;
+        border: 1px solid #a7f3d0;
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 20px;
+    }
+
+    .table-custom th {
+        color: #6b7280;
+        font-weight: 500;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 12px;
+    }
+
+    .table-custom td {
+        padding: 16px 8px;
+        vertical-align: middle;
+        color: #374151;
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    /* Activity Log Timeline */
+    .timeline {
+        border-left: 2px solid #e5e7eb;
+        padding-left: 20px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 24px;
+    }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px; /* Align dot with the border */
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #3b82f6; /* Blue dot */
+            border: 2px solid #fff;
+        }
+
+    .timeline-title {
+        color: #111827;
+        font-weight: 500;
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+    }
+
+    .timeline-sub {
+        color: #6b7280;
+        font-size: 0.85rem;
+    }
+
+    /* Comments Section */
+    .comment-box {
+        background-color: #f9fafb;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
+        .comment-box:last-child {
+            margin-bottom: 0;
+        }
+
+    .comment-meta {
+        font-size: 0.85rem;
+        color: #6b7280;
+        margin-bottom: 8px;
+    }
+
+    .comment-author {
+        color: #111827;
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    .role-badge {
+        font-size: 0.75rem;
+        padding: 2px 8px;
+        border-radius: 12px;
+        background-color: #e5e7eb;
+        color: #374151;
+        font-weight: 500;
+    }
+
+    .comment-text {
+        color: #111827;
+        font-size: 0.95rem;
+        margin: 0;
+    }
+</style>
+
+<div class="details-wrapper">
+    
+    <!-- Top Bar: Back Button -->
+    <a href="javascript:history.back()" class="back-link d-inline-flex align-items-center gap-2 mb-4">
+        <i class="bi bi-arrow-left"></i> Back
+    </a>
+
+    <!-- 1. Overall Status Banner -->
+    @{
+        var bannerClass = "status-pending";
+        var statusBadgeClass = "priority-pending";
+
+        if (Model.Status == "Complete")
+        {
+            bannerClass = "status-complete";
+            statusBadgeClass = "priority-complete";
+        }
+    }
+    <div class="status-banner @bannerClass d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <div class="status-lbl">Overall Status</div>
+            <h2 class="status-val">@Model.Status</h2>
+        </div>
+
+        <div class="text-end">
+            <div class="status-id mb-2">TP-2025-00143</div>
+
+            <span class="badge @statusBadgeClass px-3 py-1 rounded-pill fw-medium">
+                @Model.Priority
+            </span>
+        </div>
+    </div>
+
+    <!-- 2. Candidate Information -->
+    <div class="card info-card mb-4 border-0">
+        <div class="card-body p-4">
+            <h4 class="info-card-title">Candidate Information</h4>
+            <div class="row g-4">
+                <div class="col-md-4 info-item d-flex gap-2">
+                    <i class="bi bi-person icon"></i>
+                    <div>
+                        <div class="lbl">Name</div>
+                        <div class="val">@Model.Name</div>
+                    </div>
+                </div>
+                <div class="col-md-4 info-item d-flex gap-2">
+                    <i class="bi bi-envelope icon"></i>
+                    <div>
+                        <div class="lbl">Email</div>
+                        <div class="val">@Model.Email</div>
+                    </div>
+                </div>
+                <div class="col-md-4 info-item d-flex gap-2">
+                    <i class="bi bi-telephone icon"></i>
+                    <div>
+                        <div class="lbl">Phone</div>
+                        <div class="val">+@Model.Mobile</div>
+                    </div>
+                </div>
+                <div class="col-md-4 info-item d-flex gap-2">
+                    <i class="bi bi-calendar3 icon"></i>
+                    <div>
+                        <div class="lbl">DOB</div>
+                        <div class="val">@Convert.ToDateTime(Model.DOB).ToString("yyyy-MM-dd")</div>
+                    </div>
+                </div>
+                <div class="col-md-4 info-item d-flex gap-2">
+                    <i class="bi bi-briefcase icon"></i>
+                    <div>
+                        <div class="lbl">Position</div>
+                        <div class="val">@Model.Position</div>
+                    </div>
+                </div>
+                <div class="col-md-4 info-item d-flex gap-2">
+                    <i class="bi bi-building icon"></i>
+                    <div>
+                        <div class="lbl">Department</div>
+                        <div class="val">@Model.Department</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Verification Checks -->
+    <div class="card info-card mb-4 border-0">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-end mb-2">
+                <div>
+                    @{
+                        var data = ViewBag.VarData as IEnumerable<dynamic> ?? new List<dynamic>();
+
+                        int total = data.Count();
+
+                        int completed = data.Count(x => x.Status != null
+                                                     && x.Status.ToString() == "Completed");
+
+                        int progress = total > 0 ? (completed * 100) / total : 0;
+                    }
+
+
+                    <h4 class="info-card-title mb-1">Verification Checks</h4>
+                    @* <div class="text-muted small">0/@ViewBag.VarData.Count checks completed · 0% progress</div> *@
+                    <div class="text-muted small">
+                        @completed/@total checks completed · @progress% progress
+                    </div>
+                </div>
+                <div class="fw-bold text-primary fs-5">@progress%</div>
+            </div>
+            
+            <div class="progress progress-custom mb-4">
+               <div class="progress-bar"
+     role="progressbar"
+     style="width:@progress%"
+     aria-valuenow="@progress"
+     aria-valuemin="0"
+     aria-valuemax="100">
+</div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-custom table-borderless mb-0">
+                    <thead>
+                        <tr>
+                            <th>Check Type</th>
+                            <th>Status</th>
+                            <th>Flag Result</th>
+                            <th>Executor Notes</th>
+                            <th>Final Report</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @if (ViewBag.VarData != null)
+                        {
+                            foreach (var row in ViewBag.VarData)
+                            {
+                                <tr>
+                                    <td class="fw-medium">@row.Name</td>
+                                    <td>
+                                        @{
+                                            var statusClass = "";
+
+                                            switch (row.Status.ToString())
+                                            {
+                                                case "Pending":
+                                                    statusClass = "badge-pending";
+                                                    break;
+
+                                                case "In Progress":
+                                                    statusClass = "badge-progress";
+                                                    break;
+
+                                                case "Completed":
+                                                    statusClass = "badge-completed";
+                                                    break;
+
+                                                default:
+                                                    statusClass = "badge-pending";
+                                                    break;
+                                            }
+                                        }
+
+                                        <span class="@statusClass">
+                                            @row.Status
+                                        </span>
+                                    </td>
+                                    <td class="text-muted">Awaiting result</td>
+                                    <td class="text-muted">@row.ExecutorNotes</td>
+                                    @* <td>
+                                        <button class="btn btn-sm text-primary px-1" title="View"><i class="bi bi-eye"></i></button>
+                                        <button class="btn btn-sm text-muted px-1" title="Download"><i class="bi bi-download"></i></button>
+                                    </td> *@
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(row.DocumentPath))
+                                        {
+                                            <!-- Show -->
+                                            <a href="/uploads/@row.DocumentPath"
+                                                   target="_blank"
+                                                   class="btn btn-sm btn-primary">
+                                                Show
+                                            </a>
+
+                                            <!-- Download -->
+                                            <a href="/uploads/@row.DocumentPath"
+                                                   download
+                                                   class="btn btn-sm btn-success">
+                                                Download
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">No File</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Bottom Section: Activity Log & Comments -->
+    <div class="row g-4">
+
+        
+
+
+        <!-- Activity Log (Half Width on Desktop) -->
+        <div class="col-lg-6">
+            <div class="card info-card border-0 h-100">
+                <div class="card-body p-4">
+                    <h4 class="info-card-title">Activity Log</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-title">Case submitted</div>
+                            <div class="timeline-sub">XYZ ltd. · 4/1/2025, 3:30:00 PM</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-title">Case approved by admin</div>
+                            <div class="timeline-sub">Atul Rai · 4/2/2025, 2:30:00 PM</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-title">Assigned to Manish Sharma</div>
+                            <div class="timeline-sub">Atul Rai · 4/2/2025, 2:35:00 PM</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-title">ID Verification completed — Clear</div>
+                            <div class="timeline-sub">Manish Sharma · 4/8/2025, 3:30:00 PM</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-title">All checks completed</div>
+                            <div class="timeline-sub">Manish Sharma · 4/10/2025, 8:00:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  Document Section  -->
+
+       
+        <div class="col-lg-6">
+            <div class="card info-card border-0 h-100">
+                <div class="card-body p-4">
+                    <h5 class="info-card-title mb-4">Documents</h5>
+
+                    <div class="d-flex flex-column gap-3">
+                        @if (ViewBag.VarData != null)
+                        {
+                            // ViewBag.VarData me se sirf un records ko nikalenge jinka DocumentPath khali nahi hai
+                            var uploadedDocs = ((IEnumerable<dynamic>)ViewBag.VarData)
+                                                .Where(x => !string.IsNullOrEmpty((string)x.DocumentPath))
+                                                .ToList();
+
+                            if (uploadedDocs.Any())
+                            {
+                                foreach (var doc in uploadedDocs)
+                                {
+                                    <div class="d-flex justify-content-between align-items-center p-3 rounded" style="background-color: #f8f9fa;">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <i class="bi bi-file-earmark-text text-primary fs-5"></i>
+                                            
+                                            <span class="fw-medium" style="color: #4b5563; font-size: 0.95rem;">
+                                                @System.IO.Path.GetFileName((string)doc.DocumentPath)
+                                            </span>
+                                        </div>
+                                        
+                                        <a href="/uploads/@doc.DocumentPath" target="_blank" class="text-secondary" download title="Download @System.IO.Path.GetFileName((string)doc.DocumentPath)">
+                                            <i class="bi bi-download"></i>
+                                        </a>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="text-muted text-center py-3">No documents uploaded yet.</div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Comments Section (Full width in its container, can be placed below or side-by-side) -->
+        <div class="col-12">
+            <div class="card info-card border-0">
+                <div class="card-body p-4">
+                    <h4 class="info-card-title">Comments</h4>
+                    
+                    <div class="comment-box">
+                        <div class="comment-meta d-flex align-items-center gap-2">
+                            <span class="comment-author">Atul Rai</span>
+                            <span class="role-badge">Admin</span>
+                            <span>4/2/2025, 2:30:00 PM</span>
+                        </div>
+                        <p class="comment-text">Case approved and assigned to Manish. Priority normal.</p>
+                    </div>
+
+                    <div class="comment-box">
+                        <div class="comment-meta d-flex align-items-center gap-2">;
+                            <span class="comment-author">Manish Sharma</span>
+                            <span class="role-badge">Executor</span>
+                            <span>4/10/2025, 8:00:00 PM</span>
+                        </div>
+                        <p class="comment-text">All checks completed. Everything clear.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
