@@ -799,3 +799,4 @@ C:\Users\ay694\OneDrive\Documents\TrustPlus_13_05\TrustPlus\TrustPlus\obj\Debug\
 C:\Users\ay694\OneDrive\Documents\TrustPlus_13_05\TrustPlus\TrustPlus\obj\Debug\net8.0\TrustPlus.pdb
 C:\Users\ay694\OneDrive\Documents\TrustPlus_13_05\TrustPlus\TrustPlus\obj\Debug\net8.0\TrustPlus.genruntimeconfig.cache
 C:\Users\ay694\OneDrive\Documents\TrustPlus_13_05\TrustPlus\TrustPlus\obj\Debug\net8.0\ref\TrustPlus.dll
+C:\Users\ay694\OneDrive\Documents\TrustPlus_13_05\TrustPlus\TrustPlus\obj\Debug\net8.0\TrustPlus.sourcelink.json

@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|c:\\users\\ay694\\onedrive\\documents\\trustplus_13_05\\trustplus\\trustplus\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|c:\\users\\ay694\\onedrive\\documents\\trustplus_13_05\\trustplus\\trustplus\\controllers\\executorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|solutionrelative:controllers\\executorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|c:\\users\\ay694\\onedrive\\documents\\trustplus_13_05\\trustplus\\trustplus\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|c:\\users\\ay694\\onedrive\\documents\\trustplus_13_05\\trustplus\\trustplus\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|c:\\users\\ay694\\onedrive\\documents\\trustplus_13_05\\trustplus\\trustplus\\views\\admin\\employeemst.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|solutionrelative:views\\admin\\employeemst.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|c:\\users\\ay694\\onedrive\\documents\\trustplus_13_05\\trustplus\\trustplus\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDAF02C4-94EE-44D9-AEF5-70BD44D6ECFD}|TrustPlus.csproj|c:\\users\\ay694\\onedrive\\documents\\trustplus_13_05\\trustplus\\trustplus\\views\\admin\\requestmgmt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -58,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,46 +58,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExecutorController.cs",
-              "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Controllers\\ExecutorController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ExecutorController.cs",
-              "ToolTip": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Controllers\\ExecutorController.cs",
-              "RelativeToolTip": "Controllers\\ExecutorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-16T20:12:03.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-16T19:41:24.825Z",
+              "WhenOpened": "2026-05-17T09:12:59.13Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-16T19:41:09.02Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "DbManager.cs",
               "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Models\\DbManager.cs",
               "RelativeDocumentMoniker": "Models\\DbManager.cs",
@@ -117,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "NewRequest.cshtml",
               "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Views\\Admin\\NewRequest.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\NewRequest.cshtml",
@@ -129,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "RequestMgmt.cshtml",
               "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Views\\Admin\\RequestMgmt.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\RequestMgmt.cshtml",
@@ -141,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "ClientDto.cs",
               "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Models\\ClientDto.cs",
               "RelativeDocumentMoniker": "Models\\ClientDto.cs",
@@ -153,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "AssignedJob.cshtml",
               "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Views\\Admin\\AssignedJob.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\AssignedJob.cshtml",
@@ -165,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Views\\Admin\\Details.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\Details.cshtml",
@@ -177,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Views\\Admin\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\Dashboard.cshtml",
@@ -189,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "EmployeeMst.cshtml",
               "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Views\\Admin\\EmployeeMst.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\EmployeeMst.cshtml",
@@ -202,16 +168,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
               "ToolTip": "C:\\Users\\ay694\\OneDrive\\Documents\\TrustPlus_13_05\\TrustPlus\\TrustPlus\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAAE8BAAAAAAAAAAAAAE0BAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAgwIQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T05:14:03.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T05:14:03.917Z"
             }
           ]
         }
